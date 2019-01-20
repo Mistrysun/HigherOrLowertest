@@ -1,10 +1,13 @@
 package com.example.android.higherorlowertest;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Random;
 
@@ -30,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         EditText numberGuessed = (EditText) findViewById(R.id.numberEditText);
 
+        TextView clueTextView = (TextView) findViewById(R.id.clueTextView);
+
         String message;
 
         if (numberGuessed.getText().toString().isEmpty()) {
@@ -42,15 +47,20 @@ public class MainActivity extends AppCompatActivity {
 
             if (valueGuessed < randomNumber) {
                 message = "Higher!";
+                clueTextView.animate().rotationBy(3600);
+
             } else if (valueGuessed > randomNumber) {
                 message = "Lower!";
+                clueTextView.animate().rotationBy(-3600);
+
             } else {
-                message = "You got it! Here we go again!";
+                message = "You got it!";
                 GenerateRandomNumber();
             }
         }
 
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        clueTextView.setText(message);
+        clueTextView.setAlpha(1);
 
         Log.i("Entered Value", numberGuessed.getText().toString());
 
