@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logo_higher_or_lower"
+        android:layout_gravity="center"
+        android:scaleType="center"/>
+
+    <TextView
+        android:id="@+id/headerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:textColor="@color/colorWhite"
+        android:text="I'm thinking of a number between one and twenty"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Can you guess it?"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:textSize="24dp"/>
+
+    <EditText
+        android:id="@+id/numberEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:textAlignment="center"
+        android:paddingTop="8dp"
+        android:paddingRight="12dp"
+        android:paddingLeft="12dp"
+        android:hint="Enter Here"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="0dp"
+        android:text="Guess"
+        android:textAlignment="center"
+        android:onClick="GenerateOnClick"
+        android:background="@color/colorGreen"
+        android:textColor="@color/colorWhite"/>
+
+</LinearLayout>
